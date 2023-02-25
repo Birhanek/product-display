@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NewProduct = () => {
+const EditProduct = () => {
     return (
         <div>
-            add
+            edit
         </div>
     );
 };
 
-export default NewProduct;
+export default EditProduct;

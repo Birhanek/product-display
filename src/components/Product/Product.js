@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './product.css'
 import axios from "axios";
+import {Link} from "react-router-dom";
+import AddProduct from "../newProduct/newProduct";
 
 const baseURL = "http://localhost:8000/products"
 const Products = () => {
@@ -22,7 +24,7 @@ const Products = () => {
 
     return (
         <div className='navbar'>
-            <button className='add'><a href="#">Add New</a></button>
+            <Link to='/add' className='link_add'>Add New</Link>
 
             <div className='container'>
                 <table className='table'>
@@ -54,9 +56,14 @@ const Products = () => {
                             <td>{item.rating.rate}</td>
                             <td>{item.rating.count}</td>
                             <td>
-                                <button className='edit'>edit</button>
-                            </td><td>
-                                <button className='delete'>delete</button>
+                                <Link to={`/edit/${item.id}`} className='link'>
+                                    <i className='fas fa-edit'>Edit</i>
+                                </Link>
+                            </td>
+                            <td>
+                                <button className='delete' type='submit'
+                                        onClick={()=>(item.id)} >
+                                    <i className='fas fa-delete-left'></i>Delete</button>
                             </td>
                         </tr>
                     )}
