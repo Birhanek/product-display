@@ -5,7 +5,3 @@ export const getAllProducts = async ()=>{
 
     return response;
 }
-
-export const createProduct = ()=>{
-    
-}
